@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AstroNews — Deep Space Briefing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="bot.css" />
+</head>
+<body>
+
+  <!-- Starfield canvas -->
+  <canvas id="stars"></canvas>
+
+  <!-- Scanning line overlay -->
+  <div class="scanlines"></div>
+
+  <header>
+    <div class="header-glow"></div>
+    <div class="logo-wrap">
+      <span class="logo-icon">◈</span>
+      <h1>ASTRO<span class="accent">NEWS</span></h1>
+    </div>
+    <p class="tagline">DEEP SPACE INTELLIGENCE BRIEFING SYSTEM · v2.4.1</p>
+    <div class="header-bar"></div>
+  </header>
+
+  <main>
+    <div id="chat-container">
+
+      <!-- Top bar of terminal -->
+      <div class="terminal-bar">
+        <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+        <span class="terminal-title">NEWSFEED_TERMINAL // LIVE</span>
+        <span class="blink-cursor">▮</span>
+      </div>
+
+      <div id="chat-output">
+        <!-- Welcome message -->
+        <div class="message bot-message welcome">
+          <div class="bot-avatar">◈</div>
+          <div class="bot-content">
+            <p class="sys-label">SYS_INIT · ASTRO INTELLIGENCE NETWORK ONLINE</p>
+            <p>Live headlines loading below. Search any topic to drill deeper.</p>
+            <p class="hint">Quick scan: <span class="tag">space</span> <span class="tag">AI</span> <span class="tag">crypto</span> <span class="tag">climate</span> <span class="tag">politics</span></p>
+          </div>
+        </div>
+      </div>
+
+      <div id="user-input-container">
+        <div class="input-icon">⌖</div>
+        <input type="text" id="user-input" placeholder="Enter a topic to scan the cosmos..." autocomplete="off"/>
+        <button id="send-btn">
+          <span class="btn-text">TRANSMIT</span>
+          <span class="btn-icon">➤</span>
+        </button>
+      </div>
+
+    </div>
+  </main>
+
+  <div id="article-modal" class="modal">
+    <div class="modal-card">
+      <button id="modal-close" class="modal-close" aria-label="Close article details">✕</button>
+      <div class="modal-header">
+        <p class="detail-meta" id="modal-source"></p>
+        <h2 id="modal-title"></h2>
+        <p class="detail-subtitle" id="modal-author"></p>
+      </div>
+      <div class="modal-body">
+        <img id="modal-image" class="detail-image" alt="Article image" />
+        <p class="detail-text" id="modal-description"></p>
+        <p class="detail-text" id="modal-content"></p>
+        <div class="detail-footer">
+          <span id="modal-time"></span>
+          <a id="modal-link" class="detail-link" target="_blank" rel="noopener noreferrer">Read full article</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <span>ASTRO NEWS NETWORK</span> &nbsp;·&nbsp; <span>GALACTIC STANDARD TIME</span> &nbsp;·&nbsp; <span id="clock"></span>
+  </footer>
+
+  <script src="newsbot.js"></script>
+</body>
+</html>
